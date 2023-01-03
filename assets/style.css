@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "buscador"
+    "principal"
+    "pie";
+    width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.header-container {
+    grid-area: header;
+    display:flex;
+    justify-content: space-between;
+    color: white;
+    background-color: green;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    padding-top: 15px;
+    padding-left: 5px;
+    display: flex;
+    gap: 10px;
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+}
+
+.menu-busqueda{
+    display: none;
+}
+
+section {
+    grid-area: buscador;
+    background-color: darkgrey;
+    height: 75px;
+    text-align: center;
+}
+
+section p {
+    padding-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13pt;
+    margin: 0;
+    color: white;
+}
+
+.form-select {
+    width: 70%;
+    margin: auto;
+}
+
+main {
+    display: grid;
+    grid-area: principal;
+    gap: 20px;
+    padding: 35px;
+}
+
+main img {
+    width: 100%;
+}
+
+.card-product{
+    border:solid;
+    border-color: gray;
+    border-width:thin;
+    font-family: 'Roboto', sans-serif;
+    width: 310px;
+    height: 485px;
+    margin: auto;
+}
+
+.card-product img{
+    width: 100%;
+}
+
+.card-product button {
+    background-color: green;
+    color: white;
+    width: 60%;
+    height: 30px;
+}
+
+footer {
+    grid-area: pie;
+    background-color: green;
+    height: 65px;
+    text-align: center; 
+    color: white;
+}
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px){
+
+    .grid-container {
+    grid-template-areas: 
+    "header buscador"
+    "header principal"
+    "pie principal";
+    grid-template-columns: 20% 80%;
+    }
+
+    .header-container{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .title{
+        font-size: xx-large;
+    }
+
+    .icono{
+        display: none;
+    }
+
+    .menu-busqueda{
+        display: flex;
+
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+
+    .header-container .menu-busqueda .menu-lista{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: end;
+        padding-top: 15px;
+        list-style: none;
+    }
+
+    nav .pagination{
+        display: none;
+    }
+
+    footer {
+        height: 70px;
+        background-color: darkgrey;
+    }
+}
